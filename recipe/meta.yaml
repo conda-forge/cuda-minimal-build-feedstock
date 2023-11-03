@@ -10,10 +10,12 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx or win]
+  noarch: generic
 
 requirements:
   run:
+    - __linux  # [linux]
+    - __win    # [win]
     - cuda-compiler {{ version }}
     - cuda-cudart-dev 12.0.107
     - cuda-cccl 12.0.90
