@@ -1,4 +1,4 @@
-{% set version = "12.4.1" %}
+{% set version = "13.0.2" %}
 
 package:
   name: cuda-minimal-build
@@ -10,17 +10,18 @@ source:
 
 build:
   number: 0
-  noarch: generic
-  skip: true # [osx or (linux and s390x)]
+  # This is 'technically' not a noarch package: only supported on linux-64, linux-aarch64 and windows-64
+  # Therefore, 'noarch: generic' is replaced with 'skip: true' to avoid building on unsupported platforms.
+  skip: true  # [osx]
 
 requirements:
   run:
-    - __linux  # [linux]
-    - __win    # [win]
+    # Remove '__linux' and '__win' as they might not be handled properly on PBP
+    # Also, see above note about 'skip: true'
     - cuda-compiler {{ version }}
-    - cuda-cudart-dev 12.4.127
-    - cuda-cccl 12.4.127
-    - cuda-profiler-api 12.4.127
+    - cuda-cudart-dev 13.0.96
+    - cuda-cccl 13.0.85
+    - cuda-profiler-api 13.0.85
 
 test:
   commands:
@@ -35,7 +36,10 @@ about:
   description: |
     Meta-package containing the minimal necessary to build basic CUDA apps.
   doc_url: https://docs.nvidia.com/cuda/index.html
+  dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  skip-lints:
+    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda
