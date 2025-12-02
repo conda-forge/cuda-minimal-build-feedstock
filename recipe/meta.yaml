@@ -1,4 +1,4 @@
-{% set version = "12.4.1" %}
+{% set version = "13.0.2" %}
 
 package:
   name: cuda-minimal-build
@@ -18,9 +18,9 @@ requirements:
     - __linux  # [linux]
     - __win    # [win]
     - cuda-compiler {{ version }}
-    - cuda-cudart-dev 12.4.127
-    - cuda-cccl 12.4.127
-    - cuda-profiler-api 12.4.127
+    - cuda-cudart-dev 13.0.96
+    - cuda-cccl 13.0.85
+    - cuda-profiler-api 13.0.85
 
 test:
   commands:
