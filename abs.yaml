@@ -1,0 +1,10 @@
+build_parameters:
+  - "--suppress-variables"
+  #- "--skip-existing"
+  - "--error-overlinking"
+
+staging_channel_upload_target: ctk-13.1.1-build-2
+
+channels:
+  - https://staging.continuum.io/pbp/ctk-13.1.1-build-2
+  - https://staging.continuum.io/pbp/ctk-13.1.1-build-1
