@@ -1,4 +1,4 @@
-{% set version = "13.1.1" %}
+{% set version = "13.2.1" %}
 
 package:
   name: cuda-minimal-build
@@ -19,9 +19,9 @@ requirements:
     # Remove '__linux' and '__win' as they might not be handled properly on PBP
     # Also, see above note about 'skip: true'
     - cuda-compiler {{ version }}
-    - cuda-cudart-dev 13.1.80
-    - cuda-cccl 13.1.115
-    - cuda-profiler-api 13.1.115
+    - cuda-cudart-dev 13.2.75
+    - cuda-cccl 13.2.75
+    - cuda-profiler-api 13.2.75
 
 test:
   commands:
@@ -32,6 +32,7 @@ about:
   license_file: LICENSE.txt
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: Meta-package containing the minimal necessary to build basic CUDA apps.
   description: |
     Meta-package containing the minimal necessary to build basic CUDA apps.
@@ -39,7 +40,5 @@ about:
   dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
-  skip-lints:
-    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda
