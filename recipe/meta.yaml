@@ -1,4 +1,4 @@
-{% set version = "13.2.1" %}
+{% set version = "13.3.0" %}
 
 package:
   name: cuda-minimal-build
@@ -19,9 +19,9 @@ requirements:
     # Remove '__linux' and '__win' as they might not be handled properly on PBP
     # Also, see above note about 'skip: true'
     - cuda-compiler {{ version }}
-    - cuda-cudart-dev 13.2.75
-    - cuda-cccl 13.2.75
-    - cuda-profiler-api 13.2.75
+    - cuda-cudart-dev 13.3.29
+    - cuda-cccl 13.3.3.3.1
+    - cuda-profiler-api 13.3.27
 
 test:
   commands:
